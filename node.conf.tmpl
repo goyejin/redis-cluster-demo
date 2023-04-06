@@ -1,0 +1,11 @@
+port ${PORT}
+bind 0.0.0.0
+
+appendonly yes
+
+cluster-enabled yes
+cluster-config-file ${NODF}
+# cluster-node-timeout 5000
+# cluster-announce-ip 172.12.0.1${port}
+# cluster-announce-port 6379
+# cluster-announce-bus-port 16379
