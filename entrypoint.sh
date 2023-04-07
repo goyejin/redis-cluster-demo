@@ -11,4 +11,7 @@ else
     "$BASEDIR/startup.sh"
 fi
 
-tail -f "$BASEDIR/logs/node01.log"
+#tail -f "$BASEDIR/logs/node01.log"
+while [ true ]; do
+    sleep 1; 
+done
