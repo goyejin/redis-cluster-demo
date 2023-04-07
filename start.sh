@@ -8,6 +8,7 @@ for INDEX in $(seq 1 6); do
     CONF="$BASEDIR/nodes/node0${INDEX}.conf"
     LOGF="$BASEDIR/logs/node0${INDEX}.log"
     nohup redis-server "$CONF" >> "$LOGF" 2>&1 &
+    sleep 3
 done
 
 ps -ef | grep redis-server | grep -v grep

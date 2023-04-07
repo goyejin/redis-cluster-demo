@@ -3,7 +3,7 @@
 WORKDIR="$(pwd)"
 BASEDIR="$(cd "$(dirname "$0")" && pwd)"
 
-IP=$(hostname -I | tr -d ' ')
+IP=$(hostname -i | tr -d ' ')
 
 NODES=""
 for INDEX in $(seq 1 6); do
@@ -12,5 +12,5 @@ for INDEX in $(seq 1 6); do
 done
 
 set -x
-redis-cli --cluster create $NODES --cluster-replicas 1
-redis-cli -c -p 9901 CLUSTER NODES
+redis-cli -a 123456 --cluster create $NODES --cluster-replicas 1
+redis-cli -a 123456 -c -p 9901 CLUSTER NODES
